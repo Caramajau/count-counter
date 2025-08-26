@@ -1,8 +1,10 @@
+using System.Numerics;
+
 namespace CounterLogic
 {
     public interface ICounterSaver
     {
-        long ReadCounter();
-        void WriteCounter(long counter);
+        BigInteger ReadCounter();
+        void WriteCounter(BigInteger counter);
     }
 }

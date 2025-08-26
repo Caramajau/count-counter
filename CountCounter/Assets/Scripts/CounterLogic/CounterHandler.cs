@@ -1,8 +1,10 @@
+using System.Numerics;
+
 namespace CounterLogic
 {
     public class CounterHandler
     {
-        public long Counter { get; private set; }
+        public BigInteger Counter { get; private set; }
 
         private readonly ICounterSaver counterSaver;
 

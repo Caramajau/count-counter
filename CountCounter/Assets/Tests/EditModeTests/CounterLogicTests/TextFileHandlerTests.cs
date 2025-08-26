@@ -1,6 +1,7 @@
 using CounterLogic;
 using NUnit.Framework;
 using System.IO;
+using System.Numerics;
 
 namespace CounterLogicTests
 {
@@ -21,27 +22,27 @@ namespace CounterLogicTests
         public void ReadCounter_GivenFileContainsValidInt_ReturnsInt()
         {
             File.WriteAllText(testFilePath, "1337");
-            long result = textFileHandler.ReadCounter();
+            BigInteger result = textFileHandler.ReadCounter();
 
-            Assert.That(result, Is.EqualTo(1337));
+            Assert.That(result, Is.EqualTo(new BigInteger(1337)));
         }
 
         [Test]
         public void ReadCounter_GivenFileContainsInvalidInt_ReturnsZero()
         {
             File.WriteAllText(testFilePath, "notanumber");
-            long result = textFileHandler.ReadCounter();
+            BigInteger result = textFileHandler.ReadCounter();
 
-            Assert.That(result, Is.EqualTo(0));
+            Assert.That(result, Is.EqualTo(BigInteger.Zero));
         }
 
         [Test]
         public void ReadCounter_GivenFileDoesNotExist_CreatesFileAndReturnsZero()
         {
             File.Delete(testFilePath);
-            long result = textFileHandler.ReadCounter();
+            BigInteger result = textFileHandler.ReadCounter();
 
-            Assert.That(result, Is.EqualTo(0));
+            Assert.That(result, Is.EqualTo(BigInteger.Zero));
         }
 
         [Test]

@@ -1,4 +1,5 @@
 using System.IO;
+using System.Numerics;
 
 namespace CounterLogic
 {
@@ -11,9 +12,9 @@ namespace CounterLogic
             this.textPath = textPath;
         }
 
-        public long ReadCounter()
+        public BigInteger ReadCounter()
         {
-            long counter;
+            BigInteger counter;
             if (!File.Exists(textPath))
             {
                 counter = 0;
@@ -23,10 +24,10 @@ namespace CounterLogic
 
             using StreamReader reader = new(textPath);
             string content = reader.ReadToEnd();
-            return long.TryParse(content, out counter) ? counter : 0;
+            return BigInteger.TryParse(content, out counter) ? counter : 0;
         }
 
-        public void WriteCounter(long counter)
+        public void WriteCounter(BigInteger counter)
         {
             using StreamWriter writer = new(textPath, false);
             writer.Write(counter);

@@ -1,5 +1,6 @@
 using CounterLogic;
 using NUnit.Framework;
+using System.Numerics;
 
 namespace CounterLogicTests
 {
@@ -16,9 +17,9 @@ namespace CounterLogicTests
         [Test]
         public void IncrementCounter_IncrementsCounter()
         {
-            long oldCounter = counterHandler.Counter;
+            BigInteger oldCounter = counterHandler.Counter;
             counterHandler.IncrementCounter();
-            long newCounter = counterHandler.Counter;
+            BigInteger newCounter = counterHandler.Counter;
             Assert.That(newCounter, Is.EqualTo(oldCounter + 1));
         }
 
@@ -26,11 +27,11 @@ namespace CounterLogicTests
         public void ResetCounter_ResetsCounter()
         {
             counterHandler.IncrementCounter();
-            long oldCounter = counterHandler.Counter;
+            BigInteger oldCounter = counterHandler.Counter;
             counterHandler.ResetCounter();
-            long newCounter = counterHandler.Counter;
+            BigInteger newCounter = counterHandler.Counter;
             Assert.That(newCounter, Is.LessThan(oldCounter));
-            Assert.That(newCounter, Is.EqualTo(0));
+            Assert.That(newCounter, Is.EqualTo(BigInteger.Zero));
         }
 
         // NOTE: This test is very dependent on what CounterSaver class is used.

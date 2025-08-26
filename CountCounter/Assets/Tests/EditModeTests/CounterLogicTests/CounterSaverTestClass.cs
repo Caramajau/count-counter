@@ -1,16 +1,17 @@
 using CounterLogic;
+using System.Numerics;
 using UnityEngine;
 
 namespace CounterLogicTests
 {
     public class CounterSaverTestClass : ICounterSaver
     {
-        public long ReadCounter()
+        public BigInteger ReadCounter()
         {
             return 0;
         }
 
-        public void WriteCounter(long counter)
+        public void WriteCounter(BigInteger counter)
         {
             Debug.Log($"Would have saved counter: {counter}");
         }
