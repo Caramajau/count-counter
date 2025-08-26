@@ -5,12 +5,12 @@ namespace CounterLogicTests
 {
     public class CounterSaverTestClass : ICounterSaver
     {
-        public int ReadCounter()
+        public long ReadCounter()
         {
             return 0;
         }
 
-        public void WriteCounter(int counter)
+        public void WriteCounter(long counter)
         {
             Debug.Log($"Would have saved counter: {counter}");
         }

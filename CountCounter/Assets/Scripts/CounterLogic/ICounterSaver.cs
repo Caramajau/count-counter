@@ -2,7 +2,7 @@ namespace CounterLogic
 {
     public interface ICounterSaver
     {
-        int ReadCounter();
-        void WriteCounter(int counter);
+        long ReadCounter();
+        void WriteCounter(long counter);
     }
 }

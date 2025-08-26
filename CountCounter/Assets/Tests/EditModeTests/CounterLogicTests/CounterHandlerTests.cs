@@ -16,9 +16,9 @@ namespace CounterLogicTests
         [Test]
         public void IncrementCounter_IncrementsCounter()
         {
-            int oldCounter = counterHandler.Counter;
+            long oldCounter = counterHandler.Counter;
             counterHandler.IncrementCounter();
-            int newCounter = counterHandler.Counter;
+            long newCounter = counterHandler.Counter;
             Assert.That(newCounter, Is.EqualTo(oldCounter + 1));
         }
 
@@ -26,9 +26,9 @@ namespace CounterLogicTests
         public void ResetCounter_ResetsCounter()
         {
             counterHandler.IncrementCounter();
-            int oldCounter = counterHandler.Counter;
+            long oldCounter = counterHandler.Counter;
             counterHandler.ResetCounter();
-            int newCounter = counterHandler.Counter;
+            long newCounter = counterHandler.Counter;
             Assert.That(newCounter, Is.LessThan(oldCounter));
             Assert.That(newCounter, Is.EqualTo(0));
         }

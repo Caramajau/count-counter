@@ -21,7 +21,7 @@ namespace CounterLogicTests
         public void ReadCounter_GivenFileContainsValidInt_ReturnsInt()
         {
             File.WriteAllText(testFilePath, "1337");
-            int result = textFileHandler.ReadCounter();
+            long result = textFileHandler.ReadCounter();
 
             Assert.That(result, Is.EqualTo(1337));
         }
@@ -30,7 +30,7 @@ namespace CounterLogicTests
         public void ReadCounter_GivenFileContainsInvalidInt_ReturnsZero()
         {
             File.WriteAllText(testFilePath, "notanumber");
-            int result = textFileHandler.ReadCounter();
+            long result = textFileHandler.ReadCounter();
 
             Assert.That(result, Is.EqualTo(0));
         }
@@ -39,7 +39,7 @@ namespace CounterLogicTests
         public void ReadCounter_GivenFileDoesNotExist_CreatesFileAndReturnsZero()
         {
             File.Delete(testFilePath);
-            int result = textFileHandler.ReadCounter();
+            long result = textFileHandler.ReadCounter();
 
             Assert.That(result, Is.EqualTo(0));
         }

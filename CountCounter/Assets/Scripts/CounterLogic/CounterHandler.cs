@@ -2,7 +2,7 @@ namespace CounterLogic
 {
     public class CounterHandler
     {
-        public int Counter { get; private set; }
+        public long Counter { get; private set; }
 
         private readonly ICounterSaver counterSaver;
 

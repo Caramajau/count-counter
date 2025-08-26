@@ -11,9 +11,9 @@ namespace CounterLogic
             this.textPath = textPath;
         }
 
-        public int ReadCounter()
+        public long ReadCounter()
         {
-            int counter;
+            long counter;
             if (!File.Exists(textPath))
             {
                 counter = 0;
@@ -23,10 +23,10 @@ namespace CounterLogic
 
             using StreamReader reader = new(textPath);
             string content = reader.ReadToEnd();
-            return int.TryParse(content, out counter) ? counter : 0;
+            return long.TryParse(content, out counter) ? counter : 0;
         }
 
-        public void WriteCounter(int counter)
+        public void WriteCounter(long counter)
         {
             using StreamWriter writer = new(textPath, false);
             writer.Write(counter);
