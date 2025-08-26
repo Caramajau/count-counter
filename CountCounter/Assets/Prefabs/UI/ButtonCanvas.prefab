@@ -455,7 +455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6582531971034223113, guid: 53b1ff01273e6fe4696265498134d11f, type: 3}
       propertyPath: m_Name
-      value: CountButton
+      value: IncrementButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
