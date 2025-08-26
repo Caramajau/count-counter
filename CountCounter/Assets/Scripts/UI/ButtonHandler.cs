@@ -51,29 +51,29 @@ namespace UI
             quitButton.onClick.RemoveListener(OnQuitButtonClicked);
         }
 
-        public void OnApplicationQuit()
+        private void OnApplicationQuit()
         {
             OnSaveButtonClicked();
         }
 
-        public void OnIncrementButtonClicked()
+        private void OnIncrementButtonClicked()
         {
             counterHandler.IncrementCounter();
             UpdateCounterText();
         }
 
-        public void OnResetButtonClicked()
+        private void OnResetButtonClicked()
         {
             counterHandler.ResetCounter();
             UpdateCounterText();
         }
 
-        public void OnSaveButtonClicked()
+        private void OnSaveButtonClicked()
         {
             counterHandler.SaveCounter();
         }
 
-        public void OnQuitButtonClicked()
+        private void OnQuitButtonClicked()
         {
             OnSaveButtonClicked();
             #if UNITY_EDITOR
