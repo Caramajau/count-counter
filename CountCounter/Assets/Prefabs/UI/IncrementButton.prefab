@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 5858314031297860970}
   - component: {fileID: 6488458412304994687}
   m_Layer: 5
-  m_Name: CountButton
+  m_Name: IncrementButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
