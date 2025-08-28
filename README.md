@@ -22,7 +22,7 @@ The GUI should be intuitive, but here is an explanation of each button:
 - Save: Manually saves the current counter value.
 
 ### Implementation details
-The project is built using ```Unity 6000.0.40f``` and uses BigInteger for the counter value.
+The project is built using ```Unity 6000.0.40f1``` and uses BigInteger for the counter value.
 
 ### Limitations
 - The GUI can only display up to 12 606 characters of the counter value. See the [maximum_counter_value_example](./maximum_counter_value_example.txt) for an example of the length limitation. 
