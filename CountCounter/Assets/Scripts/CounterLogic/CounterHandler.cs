@@ -28,5 +28,10 @@ namespace CounterLogic
         {
             counterSaver.WriteCounter(Counter);
         }
+
+        public void DecrementCounter()
+        {
+            Counter--;
+        }
     }
 }

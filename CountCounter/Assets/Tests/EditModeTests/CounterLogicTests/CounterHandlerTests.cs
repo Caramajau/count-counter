@@ -20,7 +20,20 @@ namespace CounterLogicTests
             BigInteger oldCounter = counterHandler.Counter;
             counterHandler.IncrementCounter();
             BigInteger newCounter = counterHandler.Counter;
+
             Assert.That(newCounter, Is.EqualTo(oldCounter + 1));
+        }
+
+        // You should be allowed to decrement to negative values.
+        // It is up to the user to decide what to do with these values.
+        [Test]
+        public void DecrementCounter_DecrementsCounter()
+        {
+            BigInteger oldCounter = counterHandler.Counter;
+            counterHandler.DecrementCounter();
+            BigInteger newCounter = counterHandler.Counter;
+
+            Assert.That(newCounter, Is.EqualTo(oldCounter - 1));
         }
 
         [Test]
@@ -30,6 +43,7 @@ namespace CounterLogicTests
             BigInteger oldCounter = counterHandler.Counter;
             counterHandler.ResetCounter();
             BigInteger newCounter = counterHandler.Counter;
+
             Assert.That(newCounter, Is.LessThan(oldCounter));
             Assert.That(newCounter, Is.EqualTo(BigInteger.Zero));
         }
@@ -39,6 +53,7 @@ namespace CounterLogicTests
         public void SaveCounter_GivenValidCounter_DoesNotThrowAnException()
         {
             counterHandler.IncrementCounter();
+
             Assert.DoesNotThrow(() => counterHandler.SaveCounter());
         }
     }
