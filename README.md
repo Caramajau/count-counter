@@ -27,7 +27,7 @@ The project is built using ```Unity 6000.0.40f1``` and uses BigInteger for the c
 ### Limitations
 - The GUI can only display up to 12 606 characters of the counter value. See the [maximum_counter_value_example](./maximum_counter_value_example.txt) for an example of the length limitation. 
     - NOTE: You can still achieve a greater count than in the example by counting so that all numbers are exclusively 9s, but beyond that will not be displayed correctly in the GUI.
-- The application only supports incrementing the counter by 1. Other operations (decrementing, multiplying, etc.) are not supported. Decrementing is planned to be added in the future. (TODO)
+- The application supports incrementing and decrementing the counter by 1. Other operations, like multiplying, etc., are not supported.
 
 ### Additional notes
 - If you have any suggestions or feature requests, feel free to open an issue on the [Issues](https://github.com/Caramajau/count-counter/issues) page.
