@@ -13,13 +13,15 @@ This is a simple counter application that supports incrementing a counter value.
 3. Run the `CountCounter.exe` file to start the application. See [Instructions](#instructions) for usage details.
 
 ### Instructions
-Keyboard is planned to be supported in a future update. (TODO)
-
 The GUI should be intuitive, but here is an explanation of each button:
 - Current Counter Value: Increases the counter value by 1.
 - Quit: Exits the application and saves the counter value.
 - Reset: Resets the counter value to 0.
 - Save: Manually saves the current counter value.
+
+In addition to mouse controls, you can move around the UI using WASD, and then press ENTER to trigger the selected button.
+- By default, the increment button is selected.
+- NOTE: When switching between the increment button and the buttons to the side, the **Save** button will first be selected.
 
 ### Implementation details
 The project is built using ```Unity 6000.0.40f1``` and uses BigInteger for the counter value.
