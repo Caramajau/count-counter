@@ -1,3 +1,4 @@
+using System;
 using System.Numerics;
 
 namespace CounterLogic
@@ -27,6 +28,11 @@ namespace CounterLogic
         public void SaveCounter()
         {
             counterSaver.WriteCounter(Counter);
+        }
+
+        internal void DecrementCounter()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -18,6 +18,9 @@ namespace UI
         private Button incrementButton;
 
         [SerializeField]
+        private Button decrementButton;
+
+        [SerializeField]
         private Button resetButton;
 
         [SerializeField]
@@ -38,6 +41,7 @@ namespace UI
         private void OnEnable()
         {
             incrementButton.onClick.AddListener(OnIncrementButtonClicked);
+            decrementButton.onClick.AddListener(OnDecrementButtonClicked);
             resetButton.onClick.AddListener(OnResetButtonClicked);
             saveButton.onClick.AddListener(OnSaveButtonClicked);
             quitButton.onClick.AddListener(OnQuitButtonClicked);
@@ -46,6 +50,7 @@ namespace UI
         private void OnDisable()
         {
             incrementButton.onClick.RemoveListener(OnIncrementButtonClicked);
+            decrementButton.onClick.RemoveListener(OnDecrementButtonClicked);
             resetButton.onClick.RemoveListener(OnResetButtonClicked);
             saveButton.onClick.RemoveListener(OnSaveButtonClicked);
             quitButton.onClick.RemoveListener(OnQuitButtonClicked);
@@ -59,6 +64,12 @@ namespace UI
         private void OnIncrementButtonClicked()
         {
             counterHandler.IncrementCounter();
+            UpdateCounterText();
+        }
+
+        private void OnDecrementButtonClicked()
+        {
+            counterHandler.DecrementCounter();
             UpdateCounterText();
         }
 
