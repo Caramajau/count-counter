@@ -1,4 +1,3 @@
-using System;
 using System.Numerics;
 
 namespace CounterLogic
@@ -30,9 +29,9 @@ namespace CounterLogic
             counterSaver.WriteCounter(Counter);
         }
 
-        internal void DecrementCounter()
+        public void DecrementCounter()
         {
-            throw new NotImplementedException();
+            Counter--;
         }
     }
 }
