@@ -13,21 +13,30 @@ This is a simple counter application that supports incrementing a counter value.
 3. Run the `CountCounter.exe` file to start the application. See [Instructions](#instructions) for usage details.
 
 ### Instructions
-The GUI should be intuitive, but here is an explanation of each button:
-- Current Counter Value: Increases the counter value by 1.
+#### General instructions
+You can interact with the GUI through left-clicking the buttons. It should be intuitive, but below is an explanation of each button:
+- Current Counter Value: Increases the counter value by 1. (The increment button)
 - Quit: Exits the application and saves the counter value.
 - Reset: Resets the counter value to 0.
 - Save: Manually saves the current counter value.
+- -1: Decreases the counter value by 1.
 
-In addition to mouse controls, you can move around the UI using WASD, and then press ENTER to trigger the selected button.
-- By default, the increment button is selected.
-- NOTE: When switching between the increment button and the buttons to the side, the **Save** button will first be selected.
+#### Keyboard instructions
+In addition to mouse controls, keyboard navigation is also supported.
+- **WASD** to move between the buttons on the GUI.
+- **ENTER** to trigger the selected button.
 
-Additionally, controller support is also available. Typical controls are used for the controller:
-- Left stick or D-pad to move between the buttons on the GUI.
-- Confirm button to trigger the selected button. (A button for Xbox and Switch, while Cross button for Playstation)
+#### Controller instructions
+Additionally, controller support is also available. Typical controls are used:
+- **Left stick or D-pad** to move between the buttons on the GUI.
+- **Confirm button** to trigger the selected button. (A button for Xbox and Switch, while Cross button for Playstation)
 
 NOTE: Only a DUALSHOCK&reg;4 Wireless Controller and a Nintendo Switch&trade; Pro Controller have been tested, but other controllers should work as well.
+
+#### Additional navigation information
+By default, the increment button is selected.
+
+NOTE: When switching between the increment button and the buttons to the side, the **Save** button will first be selected.
 
 ### Implementation details
 The project is built using ```Unity 6000.0.40f1``` and uses BigInteger for the counter value.
