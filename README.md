@@ -23,6 +23,12 @@ In addition to mouse controls, you can move around the UI using WASD, and then p
 - By default, the increment button is selected.
 - NOTE: When switching between the increment button and the buttons to the side, the **Save** button will first be selected.
 
+Additionally, controller support is also available. Typical controls are used for the controller:
+- Left stick or D-pad to move between the buttons on the GUI.
+- Confirm button to trigger the selected button. (A button for Xbox and Switch, while Cross button for Playstation)
+
+NOTE: Only a DUALSHOCK&reg;4 Wireless Controller and a Nintendo Switch&trade; Pro Controller have been tested, but other controllers should work as well.
+
 ### Implementation details
 The project is built using ```Unity 6000.0.40f1``` and uses BigInteger for the counter value.
 
