@@ -10,15 +10,15 @@ namespace UI.Settings
 
         private void OnEnable()
         {
-            toggleThemeButton.onClick.AddListener(ToggleTheme);
+            toggleThemeButton.onClick.AddListener(OnToggleThemeButtonClicked);
         }
 
         private void OnDisable()
         {
-            toggleThemeButton.onClick.RemoveListener(ToggleTheme);
+            toggleThemeButton.onClick.RemoveListener(OnToggleThemeButtonClicked);
         }
 
-        private void ToggleTheme()
+        private static void OnToggleThemeButtonClicked()
         {
             ThemeManager.Instance.ToggleTheme();
         }
