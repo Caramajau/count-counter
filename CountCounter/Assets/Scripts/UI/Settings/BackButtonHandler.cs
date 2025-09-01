@@ -19,7 +19,7 @@ namespace UI.Settings
             backButton.onClick.RemoveListener(OnBackButtonClicked);
         }
 
-        private void OnBackButtonClicked()
+        private static void OnBackButtonClicked()
         {
             SceneManager.LoadScene("MainScene");
         }
