@@ -14,6 +14,14 @@ namespace UI.Settings
         public Color TextColour { get; private set; } = new Color32(50, 50, 50, 255);
 
         [field: SerializeField]
+        [Tooltip("The colour of text with outlines in the UI.")]
+        public Color TextWithOutlineColour { get; private set; } = Color.white;
+
+        [field: SerializeField]
+        [Tooltip("The outline colour of text with outlines in the UI.")]
+        public Color TextOutlineColour { get; private set; } = new Color32(50, 50, 50, 255);
+
+        [field: SerializeField]
         [Tooltip("The colour of buttons in their normal state.")]
         public Color ButtonNormal { get; private set; } = Color.white;
 

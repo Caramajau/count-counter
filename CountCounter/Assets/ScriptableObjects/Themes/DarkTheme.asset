@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <BackgroundColour>k__BackingField: {r: 0, g: 0, b: 0, a: 1}
   <TextColour>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+  <TextWithOutlineColour>k__BackingField: {r: 0, g: 0, b: 0, a: 1}
+  <TextOutlineColour>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
   <ButtonNormal>k__BackingField: {r: 0, g: 0, b: 0, a: 1}
   <ButtonHighlighted>k__BackingField: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
   <ButtonSelected>k__BackingField: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}

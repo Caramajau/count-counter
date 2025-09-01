@@ -41,19 +41,25 @@ namespace UI.Settings
 
         private static void ApplyThemeToButton(ThemeSO theme, Button button)
         {
-            ColorBlock colors = button.colors;
+            ColorBlock colours = button.colors;
 
-            colors.normalColor = theme.ButtonNormal;
-            colors.highlightedColor = theme.ButtonHighlighted;
-            colors.selectedColor = theme.ButtonSelected;
-            colors.pressedColor = theme.ButtonPressed;
-            colors.disabledColor = theme.ButtonDisabled;
+            colours.normalColor = theme.ButtonNormal;
+            colours.highlightedColor = theme.ButtonHighlighted;
+            colours.selectedColor = theme.ButtonSelected;
+            colours.pressedColor = theme.ButtonPressed;
+            colours.disabledColor = theme.ButtonDisabled;
 
-            button.colors = colors;
+            button.colors = colours;
         }
 
         private static void ApplyThemeToText(ThemeSO theme, TextMeshProUGUI text)
         {
+            if (text.outlineWidth > 0)
+            {
+                text.color = theme.TextWithOutlineColour;
+                text.outlineColor = theme.TextOutlineColour;
+                return;
+            }
             text.color = theme.TextColour;
         }
     }
