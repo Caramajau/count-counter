@@ -8,15 +8,6 @@ namespace UI.Settings
         [SerializeField]
         private Button toggleThemeButton;
 
-        [SerializeField] 
-        private ThemeSO lightTheme;
-
-        [SerializeField] 
-        private ThemeSO darkTheme;
-
-        // TODO: Persist theme choice between sessions and correctly between scenes.
-        private bool isDarkMode = false;
-
         private void OnEnable()
         {
             toggleThemeButton.onClick.AddListener(ToggleTheme);
@@ -29,8 +20,7 @@ namespace UI.Settings
 
         private void ToggleTheme()
         {
-            isDarkMode = !isDarkMode;
-            ThemeManager.Instance.ApplyTheme(isDarkMode ? darkTheme : lightTheme);
+            ThemeManager.Instance.ToggleTheme();
         }
     }
 }

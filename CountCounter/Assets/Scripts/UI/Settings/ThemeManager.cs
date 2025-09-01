@@ -7,7 +7,13 @@ namespace UI.Settings
     {
         public static ThemeManager Instance { get; private set; }
 
-        [field: SerializeField]
+        [SerializeField]
+        private ThemeSO lightTheme;
+
+        [SerializeField]
+        private ThemeSO darkTheme;
+
+        // TODO: Persist theme choice between sessions
         public ThemeSO CurrentTheme { get; private set; }
 
         public static event Action<ThemeSO> OnThemeChanged;
@@ -21,6 +27,8 @@ namespace UI.Settings
             }
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            CurrentTheme = lightTheme;
         }
 
         private void Start()
@@ -28,10 +36,21 @@ namespace UI.Settings
             ApplyTheme(CurrentTheme);
         }
 
-        public void ApplyTheme(ThemeSO newTheme)
+        private void ApplyTheme(ThemeSO newTheme)
         {
             CurrentTheme = newTheme;
             OnThemeChanged?.Invoke(CurrentTheme);
+        }
+
+        public void ToggleTheme()
+        {
+            if (CurrentTheme == null)
+            {
+                Debug.LogError("Current theme is null!");
+                return;
+            }
+
+            ApplyTheme(CurrentTheme == lightTheme ? darkTheme : lightTheme);
         }
     }
 }
