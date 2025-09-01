@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 namespace UI.Settings
 {
@@ -31,7 +32,17 @@ namespace UI.Settings
             CurrentTheme = lightTheme;
         }
 
-        private void Start()
+        private void OnEnable()
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+        private void OnDisable()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             ApplyTheme(CurrentTheme);
         }

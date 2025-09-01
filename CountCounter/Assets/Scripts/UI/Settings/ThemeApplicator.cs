@@ -12,7 +12,6 @@ namespace UI.Settings
         private void OnEnable()
         {
             ThemeManager.OnThemeChanged += ApplyThemeToScene;
-            ApplyThemeToScene(ThemeManager.Instance.CurrentTheme);
         }
 
         private void OnDisable()
