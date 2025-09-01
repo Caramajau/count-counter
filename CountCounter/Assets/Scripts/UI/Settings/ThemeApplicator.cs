@@ -22,6 +22,12 @@ namespace UI.Settings
 
         private static void ApplyThemeToScene(ThemeSO theme)
         {
+            if (theme == null)
+            {
+                Debug.LogError("Theme is null, cannot apply theme to scene.");
+                return;
+            }
+
             foreach (var button in FindObjectsByType<Button>(includeInactive, noSort))
             {
                 ApplyThemeToButton(theme, button);
@@ -31,8 +37,6 @@ namespace UI.Settings
             {
                 ApplyThemeToText(theme, text);
             }
-
-            Debug.Log("Applied theme to scene.");
         }
 
         private static void ApplyThemeToButton(ThemeSO theme, Button button)
