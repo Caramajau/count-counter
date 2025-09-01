@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6278984483727606663}
   - component: {fileID: 3358121952598941074}
   - component: {fileID: 9011156603704111405}
-  - component: {fileID: 4218652116644806258}
   m_Layer: 5
   m_Name: ToggleThemeText
   m_TagString: Untagged
@@ -139,18 +138,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &4218652116644806258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845410486501238392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd14f457eb94ef5409e8d2843c69bd90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7883705725322052542
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +151,6 @@ GameObject:
   - component: {fileID: 9059913006402005068}
   - component: {fileID: 9009827419296103039}
   - component: {fileID: 1198157567279977425}
-  - component: {fileID: 3360671399718513741}
   m_Layer: 5
   m_Name: ToggleThemeButton
   m_TagString: Untagged
@@ -289,15 +275,3 @@ MonoBehaviour:
   toggleThemeButton: {fileID: 9009827419296103039}
   lightTheme: {fileID: 11400000, guid: 7efe4048483e6444a8a3717a8d8e6536, type: 2}
   darkTheme: {fileID: 11400000, guid: 81a13cd490b4a1b4e985533bf0fa4960, type: 2}
---- !u!114 &3360671399718513741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7883705725322052542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb7575408bcd63f41a8c6d29920051c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
