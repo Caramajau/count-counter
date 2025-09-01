@@ -11,7 +11,7 @@ namespace UI.Settings
 
         [field: SerializeField]
         [Tooltip("The text colour of the UI.")]
-        public Color TextColour { get; private set; } = new(0.1960784f, 0.1960784f, 0.1960784f);
+        public Color TextColour { get; private set; } = new Color32(50, 50, 50, 255);
 
         [field: SerializeField]
         [Tooltip("The colour of buttons in their normal state.")]
@@ -19,18 +19,18 @@ namespace UI.Settings
 
         [field: SerializeField]
         [Tooltip("The colour of buttons when highlighted.")]
-        public Color ButtonHighlighted { get; private set; } = new(0.9607843f, 0.9607843f, 0.9607843f);
+        public Color ButtonHighlighted { get; private set; } = new Color32(245, 245, 245, 255);
 
         [field: SerializeField]
         [Tooltip("The colour of buttons when selected.")]
-        public Color ButtonSelected { get; private set; } = new(0.9607843f, 0.9607843f, 0.9607843f);
+        public Color ButtonSelected { get; private set; } = new Color32(245, 245, 245, 255);
 
         [field: SerializeField]
         [Tooltip("The colour of buttons when pressed.")]
-        public Color ButtonPressed { get; private set; } = new(0.7843137f, 0.7843137f, 0.7843137f);
+        public Color ButtonPressed { get; private set; } = new Color32(200, 200, 200, 255);
 
         [field: SerializeField]
         [Tooltip("The colour of buttons when disabled.")]
-        public Color ButtonDisabled { get; private set; } = new(0.7843137f, 0.7843137f, 0.7843137f, 0.5019608f);
+        public Color ButtonDisabled { get; private set; } = new Color32(200, 200, 200, 128);
     }
 }
