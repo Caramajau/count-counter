@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4659541a70fffdd44bb141e0abf635fb, type: 3}
   m_Name: DarkTheme
   m_EditorClassIdentifier: 
-  <BackgroundColour>k__BackingField: {r: 0, g: 0, b: 0, a: 1}
+  <BackgroundColour>k__BackingField: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
   <TextColour>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
   <TextWithOutlineColour>k__BackingField: {r: 0, g: 0, b: 0, a: 1}
   <TextOutlineColour>k__BackingField: {r: 1, g: 1, b: 1, a: 1}

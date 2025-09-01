@@ -36,6 +36,14 @@ namespace UI.Settings
             {
                 ApplyThemeToText(theme, text);
             }
+
+            foreach (var image in FindObjectsByType<Image>(includeInactive, noSort))
+            {
+                if (image.CompareTag("ThemedBackground"))
+                {
+                    ApplyThemeToBackgroundImage(theme, image);
+                }
+            }
         }
 
         private static void ApplyThemeToButton(ThemeSO theme, Button button)
@@ -60,6 +68,11 @@ namespace UI.Settings
                 return;
             }
             text.color = theme.TextColour;
+        }
+
+        private static void ApplyThemeToBackgroundImage(ThemeSO theme, Image image)
+        {
+            image.color = theme.BackgroundColour;
         }
     }
 }

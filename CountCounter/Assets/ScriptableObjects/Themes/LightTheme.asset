@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4659541a70fffdd44bb141e0abf635fb, type: 3}
   m_Name: LightTheme
   m_EditorClassIdentifier: 
-  <BackgroundColour>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+  <BackgroundColour>k__BackingField: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
   <TextColour>k__BackingField: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 1}
+  <TextWithOutlineColour>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+  <TextOutlineColour>k__BackingField: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   <ButtonNormal>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
   <ButtonHighlighted>k__BackingField: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
   <ButtonSelected>k__BackingField: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
