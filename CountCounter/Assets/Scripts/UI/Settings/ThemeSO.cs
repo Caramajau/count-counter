@@ -11,7 +11,7 @@ namespace UI.Settings
 
         [field: SerializeField]
         [Tooltip("The text colour of the UI.")]
-        public Color TextColour { get; private set; } = Color.black;
+        public Color TextColour { get; private set; } = new(0.1960784f, 0.1960784f, 0.1960784f);
 
         [field: SerializeField]
         [Tooltip("The colour of buttons in their normal state.")]

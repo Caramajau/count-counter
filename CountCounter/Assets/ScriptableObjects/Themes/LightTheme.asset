@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LightTheme
   m_EditorClassIdentifier: 
   <BackgroundColour>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
-  <TextColour>k__BackingField: {r: 0, g: 0, b: 0, a: 1}
+  <TextColour>k__BackingField: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 1}
   <ButtonNormal>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
   <ButtonHighlighted>k__BackingField: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
   <ButtonSelected>k__BackingField: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}

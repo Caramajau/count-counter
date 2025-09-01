@@ -14,6 +14,7 @@ namespace UI.Settings
         [SerializeField] 
         private ThemeSO darkTheme;
 
+        // TODO: Persist theme choice between sessions and correctly between scenes.
         private bool isDarkMode = false;
 
         private void OnEnable()
