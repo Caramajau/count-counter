@@ -20,7 +20,7 @@ namespace UI.Settings
             ThemeManager.OnThemeChanged -= ApplyThemeToScene;
         }
 
-        private void ApplyThemeToScene(ThemeSO theme)
+        private static void ApplyThemeToScene(ThemeSO theme)
         {
             foreach (var button in FindObjectsByType<Button>(includeInactive, noSort))
             {
@@ -35,7 +35,7 @@ namespace UI.Settings
             Debug.Log("Applied theme to scene.");
         }
 
-        private void ApplyThemeToButton(ThemeSO theme, Button button)
+        private static void ApplyThemeToButton(ThemeSO theme, Button button)
         {
             ColorBlock colors = button.colors;
 
@@ -48,7 +48,7 @@ namespace UI.Settings
             button.colors = colors;
         }
 
-        private void ApplyThemeToText(ThemeSO theme, TextMeshProUGUI text)
+        private static void ApplyThemeToText(ThemeSO theme, TextMeshProUGUI text)
         {
             text.color = theme.TextColour;
         }
