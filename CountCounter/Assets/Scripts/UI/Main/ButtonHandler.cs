@@ -5,9 +5,10 @@ using TMPro;
 using UnityEditor;
 # endif
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace UI
+namespace UI.Main
 {
     public class ButtonHandler : MonoBehaviour
     {
@@ -29,6 +30,9 @@ namespace UI
         [SerializeField]
         private Button quitButton;
 
+        [SerializeField]
+        private Button settingsButton;
+
         private CounterHandler counterHandler;
 
         private void Awake()
@@ -45,6 +49,7 @@ namespace UI
             resetButton.onClick.AddListener(OnResetButtonClicked);
             saveButton.onClick.AddListener(OnSaveButtonClicked);
             quitButton.onClick.AddListener(OnQuitButtonClicked);
+            settingsButton.onClick.AddListener(OnSettingsButtonClicked);
         }
 
         private void OnDisable()
@@ -54,6 +59,7 @@ namespace UI
             resetButton.onClick.RemoveListener(OnResetButtonClicked);
             saveButton.onClick.RemoveListener(OnSaveButtonClicked);
             quitButton.onClick.RemoveListener(OnQuitButtonClicked);
+            settingsButton.onClick.RemoveListener(OnSettingsButtonClicked);
         }
 
         private void OnApplicationQuit()
@@ -82,6 +88,12 @@ namespace UI
         private void OnSaveButtonClicked()
         {
             counterHandler.SaveCounter();
+        }
+
+        private void OnSettingsButtonClicked()
+        {
+            OnSaveButtonClicked();
+            SceneManager.LoadScene("Settings");
         }
 
         private void OnQuitButtonClicked()
