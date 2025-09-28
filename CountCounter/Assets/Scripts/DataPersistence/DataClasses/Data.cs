@@ -10,6 +10,6 @@ namespace DataPersistence.DataClasses
         // Might change in the future.
         [SerializeField]
         private long lastUpdated;
-        public long LastUpdated { get { return lastUpdated; } set { lastUpdated = value; } }
+        public long LastUpdated { get => lastUpdated; set => lastUpdated = value; }
     }
 }
