@@ -1,10 +1,12 @@
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using DataPersistence;
+using DataPersistence.DataClasses;
 
 namespace UI.Settings
 {
-    public class ThemeManager : MonoBehaviour
+    public class ThemeManager : MonoBehaviour, IDataPersistence<SettingsData>
     {
         public static ThemeManager Instance { get; private set; }
 
@@ -14,7 +16,6 @@ namespace UI.Settings
         [SerializeField]
         private ThemeSO darkTheme;
 
-        // TODO: Persist theme choice between sessions
         public ThemeSO CurrentTheme { get; private set; }
 
         public static event Action<ThemeSO> OnThemeChanged;
@@ -28,23 +29,6 @@ namespace UI.Settings
             }
             Instance = this;
             DontDestroyOnLoad(gameObject);
-
-            CurrentTheme = lightTheme;
-        }
-
-        private void OnEnable()
-        {
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-
-        private void OnDisable()
-        {
-            SceneManager.sceneLoaded -= OnSceneLoaded;
-        }
-
-        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-        {
-            ApplyTheme(CurrentTheme);
         }
 
         private void ApplyTheme(ThemeSO newTheme)
@@ -62,6 +46,23 @@ namespace UI.Settings
             }
 
             ApplyTheme(CurrentTheme == lightTheme ? darkTheme : lightTheme);
+        }
+
+        public void LoadData(SettingsData data)
+        {
+            if (data.CurrentTheme == null)
+            {
+                // If no theme has been saved, default to light.
+                CurrentTheme = lightTheme;
+                return;
+            }
+            CurrentTheme = data.CurrentTheme;
+            ApplyTheme(CurrentTheme);
+        }
+
+        public void SaveData(SettingsData data)
+        {
+            data.CurrentTheme = CurrentTheme;
         }
     }
 }

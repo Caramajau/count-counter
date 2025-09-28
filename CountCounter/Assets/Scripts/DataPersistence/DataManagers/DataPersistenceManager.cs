@@ -40,13 +40,13 @@ namespace DataPersistence.DataManagers
             dataHandler = new FileDataHandler<T>(Application.persistentDataPath, fileName);
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             // Can't be done in start since the scene loads before it. 
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
