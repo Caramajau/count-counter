@@ -28,7 +28,6 @@ namespace DataPersistence.DataManagers
         {
             if (Instance != null)
             {
-                Debug.LogWarning("Found more than one Data Persistence Manager in scene, destroying newest.");
                 Destroy(gameObject);
                 return;
             }
@@ -51,13 +50,13 @@ namespace DataPersistence.DataManagers
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
 
-        public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             dataPersistenceObjects = FindAllDataPersistenceObjects();
             LoadTheData();
         }
 
-        public virtual void CreateNewData()
+        protected void CreateNewData()
         {
             saveData = new T();
             foreach (IDataPersistence<T> dataPersistenceObject in dataPersistenceObjects)
@@ -66,7 +65,7 @@ namespace DataPersistence.DataManagers
             }
         }
 
-        public void LoadTheData()
+        private void LoadTheData()
         {
             saveData = dataHandler.Load();
 
@@ -82,7 +81,7 @@ namespace DataPersistence.DataManagers
             }
         }
 
-        public void SaveTheData()
+        protected void SaveTheData()
         {
             if (saveData == null)
             {
@@ -106,13 +105,13 @@ namespace DataPersistence.DataManagers
             SaveTheData();
         }
 
-        private List<IDataPersistence<T>> FindAllDataPersistenceObjects()
+        private static List<IDataPersistence<T>> FindAllDataPersistenceObjects()
         {
             IEnumerable<IDataPersistence<T>> foundDataPersistenceObjects = FindObjectsByType<MonoBehaviour>(noSort).OfType<IDataPersistence<T>>();
             return new List<IDataPersistence<T>>(foundDataPersistenceObjects);
         }
 
-        public bool HasData()
+        protected bool HasData()
         {
             return saveData != null;
         }
