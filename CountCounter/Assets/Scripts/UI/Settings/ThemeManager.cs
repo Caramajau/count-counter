@@ -1,6 +1,5 @@
 using UnityEngine;
 using System;
-using UnityEngine.SceneManagement;
 using DataPersistence;
 using DataPersistence.DataClasses;
 
@@ -31,12 +30,6 @@ namespace UI.Settings
             DontDestroyOnLoad(gameObject);
         }
 
-        private void ApplyTheme(ThemeSO newTheme)
-        {
-            CurrentTheme = newTheme;
-            OnThemeChanged?.Invoke(CurrentTheme);
-        }
-
         public void ToggleTheme()
         {
             if (CurrentTheme == null)
@@ -46,6 +39,12 @@ namespace UI.Settings
             }
 
             ApplyTheme(CurrentTheme == lightTheme ? darkTheme : lightTheme);
+        }
+
+        private void ApplyTheme(ThemeSO newTheme)
+        {
+            CurrentTheme = newTheme;
+            OnThemeChanged?.Invoke(CurrentTheme);
         }
 
         public void LoadData(SettingsData data)
