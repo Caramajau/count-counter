@@ -49,19 +49,27 @@ namespace UI.Settings
 
         public void LoadData(SettingsData data)
         {
-            if (data.SelectedTheme == null)
-            {
-                // If no theme has been saved, default to light.
-                CurrentTheme = lightTheme;
-                return;
-            }
-            CurrentTheme = data.SelectedTheme;
+            CurrentTheme = ConvertThemeEnumToThemeSO(data.SelectedTheme);
             ApplyTheme(CurrentTheme);
+        }
+
+        private ThemeSO ConvertThemeEnumToThemeSO(Theme theme)
+        {
+            return theme == Theme.Light ? lightTheme : darkTheme;
         }
 
         public void SaveData(SettingsData data)
         {
-            data.SelectedTheme = CurrentTheme;
+            if (CurrentTheme == null)
+            {
+                return;
+            }
+            data.SelectedTheme = ConvertThemeSOToThemeEnum(CurrentTheme);
+        }
+
+        private Theme ConvertThemeSOToThemeEnum(ThemeSO currentTheme)
+        {
+            return currentTheme == lightTheme ? Theme.Light : Theme.Dark;
         }
     }
 }

@@ -7,6 +7,6 @@ namespace DataPersistence.DataClasses
     public class SettingsData : Data
     {
         [field: SerializeField]
-        public ThemeSO SelectedTheme { get; set; }
+        public Theme SelectedTheme { get; set; } = Theme.Light;
     }
 }
