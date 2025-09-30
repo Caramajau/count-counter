@@ -49,19 +49,19 @@ namespace UI.Settings
 
         public void LoadData(SettingsData data)
         {
-            if (data.CurrentTheme == null)
+            if (data.SelectedTheme == null)
             {
                 // If no theme has been saved, default to light.
                 CurrentTheme = lightTheme;
                 return;
             }
-            CurrentTheme = data.CurrentTheme;
+            CurrentTheme = data.SelectedTheme;
             ApplyTheme(CurrentTheme);
         }
 
         public void SaveData(SettingsData data)
         {
-            data.CurrentTheme = CurrentTheme;
+            data.SelectedTheme = CurrentTheme;
         }
     }
 }
