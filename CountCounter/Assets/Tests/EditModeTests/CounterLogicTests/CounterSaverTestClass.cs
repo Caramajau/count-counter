@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CounterLogicTests
 {
-    public class CounterSaverTestClass : ICounterSaver
+    internal class CounterSaverTestClass : ICounterSaver
     {
         public BigInteger ReadCounter()
         {

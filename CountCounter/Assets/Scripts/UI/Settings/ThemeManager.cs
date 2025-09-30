@@ -1,10 +1,11 @@
 using UnityEngine;
 using System;
-using UnityEngine.SceneManagement;
+using DataPersistence;
+using DataPersistence.DataClasses;
 
 namespace UI.Settings
 {
-    public class ThemeManager : MonoBehaviour
+    public class ThemeManager : MonoBehaviour, IDataPersistence<SettingsData>
     {
         public static ThemeManager Instance { get; private set; }
 
@@ -14,7 +15,6 @@ namespace UI.Settings
         [SerializeField]
         private ThemeSO darkTheme;
 
-        // TODO: Persist theme choice between sessions
         public ThemeSO CurrentTheme { get; private set; }
 
         public static event Action<ThemeSO> OnThemeChanged;
@@ -28,29 +28,6 @@ namespace UI.Settings
             }
             Instance = this;
             DontDestroyOnLoad(gameObject);
-
-            CurrentTheme = lightTheme;
-        }
-
-        private void OnEnable()
-        {
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-
-        private void OnDisable()
-        {
-            SceneManager.sceneLoaded -= OnSceneLoaded;
-        }
-
-        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-        {
-            ApplyTheme(CurrentTheme);
-        }
-
-        private void ApplyTheme(ThemeSO newTheme)
-        {
-            CurrentTheme = newTheme;
-            OnThemeChanged?.Invoke(CurrentTheme);
         }
 
         public void ToggleTheme()
@@ -62,6 +39,37 @@ namespace UI.Settings
             }
 
             ApplyTheme(CurrentTheme == lightTheme ? darkTheme : lightTheme);
+        }
+
+        private void ApplyTheme(ThemeSO newTheme)
+        {
+            CurrentTheme = newTheme;
+            OnThemeChanged?.Invoke(CurrentTheme);
+        }
+
+        public void LoadData(SettingsData data)
+        {
+            CurrentTheme = ConvertThemeEnumToThemeSO(data.SelectedTheme);
+            ApplyTheme(CurrentTheme);
+        }
+
+        private ThemeSO ConvertThemeEnumToThemeSO(Theme theme)
+        {
+            return theme == Theme.Light ? lightTheme : darkTheme;
+        }
+
+        public void SaveData(SettingsData data)
+        {
+            if (CurrentTheme == null)
+            {
+                return;
+            }
+            data.SelectedTheme = ConvertThemeSOToThemeEnum(CurrentTheme);
+        }
+
+        private Theme ConvertThemeSOToThemeEnum(ThemeSO currentTheme)
+        {
+            return currentTheme == lightTheme ? Theme.Light : Theme.Dark;
         }
     }
 }
