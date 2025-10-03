@@ -39,7 +39,7 @@ By default, the increment button is selected.
 NOTE: When switching between the increment button and the buttons to the side, the **Save** button will first be selected.
 
 ### Implementation details
-The project is built using ```Unity 6000.0.40f1``` and uses BigInteger for the counter value.
+The project is built using ```Unity 6000.0.58f2``` and uses BigInteger for the counter value.
 
 ### Limitations
 - The GUI can only display up to 12 606 characters of the counter value. See the [maximum_counter_value_example](./maximum_counter_value_example.txt) for an example of the length limitation. 
