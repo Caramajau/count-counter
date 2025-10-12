@@ -281,6 +281,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3482128575742904616, guid: e1d086e6181b23847b7deb79eb11dd7c, type: 3}
+      propertyPath: rootCanvas
+      value: 
+      objectReference: {fileID: 5586757855709453560}
     - target: {fileID: 6168910185768297173, guid: e1d086e6181b23847b7deb79eb11dd7c, type: 3}
       propertyPath: m_Name
       value: ThemeApplicator
@@ -387,6 +391,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f2575d4957316a45a831ba7ded619dd, type: 3}
+--- !u!223 &5586757855709453560 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 3655391669795919184, guid: 7f2575d4957316a45a831ba7ded619dd, type: 3}
+  m_PrefabInstance: {fileID: 5586757855709453559}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
