@@ -9,6 +9,9 @@ namespace UI.Settings
         private const FindObjectsInactive includeInactive = FindObjectsInactive.Include;
         private const FindObjectsSortMode noSort = FindObjectsSortMode.None;
 
+        [SerializeField]
+        private Canvas rootCanvas;
+
         private void OnEnable()
         {
             ThemeManager.OnThemeChanged += ApplyThemeToScene;
@@ -19,8 +22,11 @@ namespace UI.Settings
             ThemeManager.OnThemeChanged -= ApplyThemeToScene;
         }
 
-        private static void ApplyThemeToScene(ThemeSO theme)
+        private void ApplyThemeToScene(ThemeSO theme)
         {
+            // Makes an assumption that all GUI will be in one canvas.
+            // (which it probably will for this small project)
+            rootCanvas.gameObject.SetActive(false);
             if (theme == null)
             {
                 Debug.LogError("Theme is null, cannot apply theme to scene.");
@@ -44,6 +50,7 @@ namespace UI.Settings
                     ApplyThemeToBackgroundImage(theme, image);
                 }
             }
+            rootCanvas.gameObject.SetActive(true);
         }
 
         private static void ApplyThemeToButton(ThemeSO theme, Button button)
